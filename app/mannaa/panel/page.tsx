@@ -45,7 +45,8 @@ const page = () => {
         }
     })
     const onSubmit = async (formFields:any)=>{
-        setLoading(true)
+        try {
+            setLoading(true)
         //const formData = handleFormData(formFields)
         console.log(formFields)
         const resp = await fetch(`${apiBaseUrl}/user`,{
@@ -64,6 +65,9 @@ const page = () => {
                     callbackUrl : '/mannaa/login'
                 })
             }
+        }
+        } catch (error) {
+            console.log(error)
         }
     }
     
