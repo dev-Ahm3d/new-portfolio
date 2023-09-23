@@ -12,19 +12,15 @@ export const metadata: Metadata = {
 }
 const getProjects = async ()=>{
     try {
-        const resp = await fetch(`${apiBaseUrl}/projects`,{
-            next : {
-                revalidate : 60
-            }
-        })
+        const resp = await fetch(`${apiBaseUrl}/projects`,{cache:'no-cache'})
         const data = await resp.json()
         return data.docs
     } catch (error) {
         redirect('/error')
     }
 }
+export const runtime = 'edge'
 
-export const runtime = 'edge' 
 
 const page = async () => {
     const projects = await getProjects()
