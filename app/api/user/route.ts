@@ -32,5 +32,5 @@ export async function PATCH(req:NextRequest){
         delete data.newPassword
     }
     const updatedInfo = await updateUserInfo(data)
-    return NextResponse.json({updatedInfo : JSON.parse(JSON.stringify(updatedInfo))},{status:201})
+    return NextResponse.json({updatedInfo},{status:201})
 }
