@@ -1,5 +1,5 @@
 //export const apiBaseUrl = "http://localhost:3000/api"
-export const apiBaseUrl = "/api"
+export const apiBaseUrl = "https://fluffy-syrniki-db47f1.netlify.app//api"
 
 export const DB_URL = "mongodb+srv://Ahmed:Professional98@cluster0.ucwoy.mongodb.net/new-portfolio?retryWrites=true&w=majority"
 
