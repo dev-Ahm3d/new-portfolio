@@ -24,8 +24,8 @@ const getData = async ()=>{
         const data = await resp.json()
         return data
     } catch (error) {
-        //console.log(error)
-        redirect('/error')
+        console.log(error)
+        //redirect('/error')
     }
 }
 
