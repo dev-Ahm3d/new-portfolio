@@ -20,7 +20,8 @@ const getProjects = async ()=>{
         //redirect('/error')
     }
 }
-//export const runtime = 'edge'
+
+export const runtime = 'edge'
 
 
 const page = async () => {
