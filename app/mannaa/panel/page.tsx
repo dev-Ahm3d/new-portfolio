@@ -3,12 +3,11 @@ import ImageFile from "@/components/imageFile/ImageFile"
 import { useState } from "react"
 import {useForm} from 'react-hook-form'
 import CustomAlert from "@/components/customAlert/CustomAlert"
-import callApiHandler from "@/utils/callApi"
+import callApiHandler, { apiBaseUrl } from "@/utils/callApi"
 import handleFormData from "@/utils/formdata"
 import './Panel.css'
 import LoadingSpinner from "@/components/Loading"
 import {signOut} from 'next-auth/react'
-import { apiBaseUrl } from "next-auth/client/_utils"
 type PersonInfo = {
     name  : string , 
     email : string , 
