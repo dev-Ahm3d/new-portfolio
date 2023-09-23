@@ -28,7 +28,7 @@ const getData = async ()=>{
         //redirect('/error')
     }
 }
-
+export const runtime = 'edge' 
 export default async function About() {
     const data = await getData()
     return (

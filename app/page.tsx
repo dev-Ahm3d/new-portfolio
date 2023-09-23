@@ -18,6 +18,8 @@ const getInfo = async ()=>{
     }
 }
 
+export const runtime = 'edge' 
+
 export default async function Home() {
   const info = await getInfo()
   return (

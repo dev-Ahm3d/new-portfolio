@@ -24,6 +24,8 @@ const getProjects = async ()=>{
     }
 }
 
+export const runtime = 'edge' 
+
 const page = async () => {
     const projects = await getProjects()
     return (
