@@ -29,7 +29,6 @@ const getData = async ()=>{
     }
 }
 
-export const runtime = 'edge'
 export default async function About() {
     const data = await getData()
     return (

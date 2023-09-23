@@ -14,7 +14,7 @@ const getProjects = async ()=>{
     try {
         const resp = await fetch(`${apiBaseUrl}/projects`,{
             next : {
-                revalidate : 30
+                revalidate : 60
             }
         })
         const data = await resp.json()
