@@ -46,11 +46,11 @@ const page = () => {
     })
     const onSubmit = async (formFields:any)=>{
         setLoading(true)
-        const formData = handleFormData(formFields)
-        console.log(formData)
+        //const formData = handleFormData(formFields)
+        console.log(formFields)
         const resp = await fetch(`${apiBaseUrl}/user`,{
             method : "PATCH" ,
-            body : formData
+            body : formFields
         })
         const data = await resp.json() 
         setLoading(false)
