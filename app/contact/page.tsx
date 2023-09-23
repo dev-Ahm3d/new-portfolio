@@ -20,7 +20,10 @@ const page = () => {
         document.title = 'Ahmed Ehab | contact'
         axios.get(`${apiBaseUrl}/user`)
         .then(resp => setInfo(resp?.data.info))
-        .catch(() => window.location.href = '/error')
+        .catch(err => {
+            console.log(err)
+            //window.location.href = '/error'
+        })
     },[])
     const {register,handleSubmit,reset} = useForm()
     const onSubmit = async (fields:any)=>{

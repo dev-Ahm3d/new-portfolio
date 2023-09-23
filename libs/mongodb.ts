@@ -1,4 +1,3 @@
-import { DB_URL } from '@/utils/callApi'
 import {connect} from 'mongoose'
 const  connectMongo = async ()=>{
     try {
