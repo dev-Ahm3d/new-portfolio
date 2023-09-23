@@ -8,6 +8,7 @@ import handleFormData from "@/utils/formdata"
 import './Panel.css'
 import LoadingSpinner from "@/components/Loading"
 import {signOut} from 'next-auth/react'
+import { apiBaseUrl } from "next-auth/client/_utils"
 type PersonInfo = {
     name  : string , 
     email : string , 
@@ -47,10 +48,15 @@ const page = () => {
     const onSubmit = async (formFields:any)=>{
         setLoading(true)
         const formData = handleFormData(formFields)
-        const resp = await callApiHandler('patch','/user',{},formData)
+        console.log(formData)
+        const resp = await fetch(`${apiBaseUrl}/user`,{
+            method : "PATCH" ,
+            body : formData
+        })
+        const data = await resp.json() 
         setLoading(false)
         if(resp?.status === 201){
-            const {updatedInfo} = resp.data
+            const {updatedInfo} = data
             handleAlert('updated successfully')
             userForm.setValue('image','')
             setImage(updatedInfo.image)
