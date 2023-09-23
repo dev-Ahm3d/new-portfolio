@@ -8,7 +8,7 @@ const authOptions : NextAuthOptions = {
     pages : {
         signIn : '/mannaa/login'
     },
-    secret : process.env.NEXTAUTH_SECRET || "",
+    secret : process.env.NEXTAUTH_SECRET || "", 
     providers : [
         CredentialsProvider({
             name : 'credentials' , 
