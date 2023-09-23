@@ -3,7 +3,7 @@ import ImageFile from "@/components/imageFile/ImageFile"
 import { useState } from "react"
 import {useForm} from 'react-hook-form'
 import CustomAlert from "@/components/customAlert/CustomAlert"
-import callApiHandler, { apiBaseUrl } from "@/utils/callApi"
+import callApiHandler from "@/utils/callApi"
 import handleFormData from "@/utils/formdata"
 import './Panel.css'
 import LoadingSpinner from "@/components/Loading"
@@ -45,18 +45,12 @@ const page = () => {
         }
     })
     const onSubmit = async (formFields:any)=>{
-        try {
-            setLoading(true)
-        //const formData = handleFormData(formFields)
-        console.log(formFields)
-        const resp = await fetch(`${apiBaseUrl}/user`,{
-            method : "PATCH" ,
-            body : formFields
-        })
-        const data = await resp.json() 
+        setLoading(true)
+        const formData = handleFormData(formFields)
+        const resp = await callApiHandler('patch','/user',{},formData)
         setLoading(false)
         if(resp?.status === 201){
-            const {updatedInfo} = data
+            const {updatedInfo} = resp.data
             handleAlert('updated successfully')
             userForm.setValue('image','')
             setImage(updatedInfo.image)
@@ -65,9 +59,6 @@ const page = () => {
                     callbackUrl : '/mannaa/login'
                 })
             }
-        }
-        } catch (error) {
-            console.log(error)
         }
     }
     
