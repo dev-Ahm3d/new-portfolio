@@ -1,0 +1,14 @@
+.msgs-cont{
+    padding: 20px;
+    overflow-x: auto;
+}
+.msgs-cont > h2 {
+    margin-bottom: 15px;
+}
+.messages :is(tr,th,td) {
+    border: 1px solid;
+    padding: 5px;
+}
+.messages th {
+    font-weight: 500;
+}

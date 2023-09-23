@@ -1,0 +1,44 @@
+.custom-alert{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 40%;
+    height: 200px;
+    z-index: 9999;
+    background-color: var(--color13);
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-alert svg path {
+    color: rgb(5, 189, 5);
+}
+.custom-alert h3{
+    font-size: 1.7rem;
+    text-transform: capitalize;
+}
+
+@media(max-width:768px){
+    .custom-alert {
+        width: 95%;
+        height: 150px;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%,-60%);
+    }
+}
+.alert-overlay {
+    position: fixed !important;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    background-color: black;
+    opacity: .5;
+}
+

@@ -1,0 +1,71 @@
+.panel-skills{
+    padding: 20px;
+    width: 70%;
+    margin: auto;
+}
+.panel-skills > h2{
+    font-size: 1.7rem;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.panel-skills .new-skill{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.panel-skills .update-skill form {
+    display: flex;
+    flex-direction: column;
+}
+
+.update-skill form > div {
+    margin-top: 10px;
+}
+
+.update-skill .inp-label label {
+    color: var(--color12);
+    padding-right: 10px;
+}
+
+.update-skill form input {
+    margin-top: 3px;
+} 
+
+.update-skill button {
+    margin-top: 15px;
+}
+
+
+@media(max-width:768px){
+    .panel-skills{
+        margin: unset;
+        width: 100%;
+    }
+    .panel-skills .new-skill{
+        flex-direction: column;
+    }
+}
+
+.panel-skills .skill-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+}
+
+.panel-skills .skill-info > div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.panel-skills .skill-info > div label {
+    color: var(--color5);
+}
+
+.panel-skills .delete-skill button {
+    background-color: red !important;
+}

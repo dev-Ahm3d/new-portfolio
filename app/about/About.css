@@ -1,0 +1,263 @@
+.about-cont{
+    padding-top: 50px;
+}
+
+/* start info section  */
+.info-deps{
+    display: grid;
+    grid-template-columns: 60% 35%;
+    grid-template-rows: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+.person-info{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.person-info > div span:first-of-type{
+    color: var(--color12);
+}
+.person-info > div span:last-of-type{
+    font-weight: 500;
+}
+
+.about-deps{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.about-deps .dep  , 
+.about-deps .dep-text{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
+}
+
+
+
+.about-deps .dep {
+    border: 1px solid var(--color13);
+    gap: 10px;
+    padding: 15px;
+    padding-left: 5%;
+    border-radius: 3px;
+    width: 75%;
+    transition: border-color .5s ease;
+}
+
+.about-deps .dep:hover{
+    border-color: var(--color2);
+}
+
+@media(max-width:1350px){
+    .about-deps .dep {
+        width: 70%;
+    }
+}
+@media(max-width:992px){
+    .about-deps .dep {
+        width: 100%;
+    }
+}
+
+@media(max-width:768px){
+    .about-cont {
+        padding-bottom: 80px;
+    }
+    .info-deps{
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+    }
+    .about-deps{
+        justify-content: flex-start;
+        margin-top: 30px;
+        gap: 20px !important;
+    }
+    .about-deps .dep {
+        width: 45%;
+    }
+}
+
+@media(max-width:400px){
+    .about-deps{
+        justify-content: center;
+    }
+    .about-deps .dep {
+        width: 80%;
+    }
+}
+
+
+.about-deps .dep-number span{
+    color: var(--color2);
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.about-deps .dep-number span:last-child{
+    font-size: 2em;
+    vertical-align:top;
+    font-weight: 600;
+
+}
+.about-deps .dep-text{
+    position: relative;
+    padding-left: 40px;
+}
+
+.about-deps .dep-text::before{
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 30px;
+    height: 1px;
+    border-radius: 5px;
+    background-color: gray;
+}
+
+.about-deps .dep-text span {
+    color: white;
+    text-transform: uppercase;
+}
+/* end info section  */
+
+/* start skills section  */
+.my-skills-cont{
+    text-align: center;
+}
+
+.my-skills {
+    display: flex; 
+    gap: 30px 100px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+
+.my-skills .skill {
+    width : 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+}
+
+.my-skills .skill img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100px;
+    border: 1px solid var(--color13);
+    border-radius: 50%;
+    transition: rotate 0.5s ease;
+}
+
+.my-skills .skill:hover span{
+    color: var(--color2);
+}
+
+.my-skills .skill:hover img{
+    border: 2px solid var(--color2);
+    rotate: 360deg;
+}
+/* end skills section  */
+
+
+/* start experience section  */
+
+.exps{
+    display: grid;
+    grid-template-columns : repeat(auto-fill,minmax(45%,1fr));
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 50px;
+}
+@media(max-width:768px){
+    .exps{
+        grid-template-columns: 100%;
+    }
+}
+.exp{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 0;
+    padding-left: 40px;
+    border-left: .5px solid var(--color18);
+    position: relative;
+}
+.exp .exp-icon {
+    position: absolute;
+    top: 0;
+    left: -17px;
+    padding: 7px;
+    background-color: var(--color2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.exp :is(.period,.title-place,.desc){
+    margin-bottom: 10px;
+}
+.exp .period {
+    font-weight: 500;
+    color: var(--color17);
+    background-color: var(--color4);
+    width: fit-content;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: .8rem;
+}
+
+.exp .title-place {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.title-place :is(h2,h3){
+    text-transform: uppercase;
+}
+.title-place h2 {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.title-place h3 {
+    font-size: .9em;
+    color: var(--color17);
+    font-weight: bold;
+}
+
+.exp .desc {
+    max-width: 90%;
+    color: var(--color16);
+    font-size: .9rem;
+}
+
+@media(max-width:400px){
+    .exp .desc {
+        max-width: 100%;
+    }
+}
+
+/* end experience section  */
+
+
+
+
+

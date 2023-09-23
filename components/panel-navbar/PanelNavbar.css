@@ -1,0 +1,66 @@
+.panel-navbar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-right: 1px solid var(--color8);
+    padding: 15px;
+    background-color: var(--color13);
+}
+.panel-navbar .navbar-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-bottom:1px solid var(--color8) ;
+    padding-bottom: 10px;
+}
+.panel-navbar h2{
+    font-size: 1.35em ;
+    font-weight: bold;
+    color: var(--color2);
+}
+.panel-navbar .navbar-header svg {
+    fill: var(--color2);
+}
+.panel-navbar a {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 1.1rem;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+.panel-navbar :is(a:hover,.cat-active){
+    background-color: var(--color2);
+}
+
+.panel-navbar a svg {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@media(max-width:992px){
+    .panel-navbar{
+        position: relative;
+        flex-direction: row;   
+        flex-wrap: wrap;
+        width: fit-content;
+        height: fit-content;
+        align-items: center;
+        gap: 10px;
+    }
+    .panel-navbar .navbar-header{
+        width: 100% !important;
+    }
+    .panel-navbar a {
+        font-size: 1.1em;
+    }
+}

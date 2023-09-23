@@ -1,0 +1,26 @@
+.custom-button {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    font-weight: bold;
+    border: 1.5px solid var(--color2);
+    gap: 10px;
+    border-radius: 15px;
+    padding: 15px;
+    background-color: transparent;
+    transition: background-color .3s ease;
+    text-transform: uppercase;
+}
+.custom-button:hover{
+    background-color: var(--color2);
+}
+
+.custom-button svg {
+    color: white;
+    padding: 5px;
+    background-color: var(--color2);
+    border-radius: 50%;
+    font-weight:800 !important ;
+}

@@ -1,0 +1,40 @@
+.page-title-cont {
+    position: relative;
+    text-align: center;
+}
+
+.page-title-cont h1 {
+    color: var(--color4);
+    font-size: 7em;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1vw;
+}
+
+.page-title-cont :is(h1,span){
+    text-transform: uppercase;
+}
+
+.page-title-cont .about-me{
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.page-title-cont .about-me span{
+    font-size: 5em;
+    font-weight: bold;
+}
+
+
+@media(max-width:768px){
+    .page-title-cont h1 {
+        font-size: 4em;
+    }
+    .page-title-cont .about-me span{
+        font-size: 2.5em;
+    }
+
+}

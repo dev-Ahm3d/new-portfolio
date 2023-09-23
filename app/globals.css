@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --animate-duration: 2000ms;
+  --animate-delay: 0s;
+  --color1 : rgb(17,17,17);
+  --color2 : rgb(255,180,0);
+  --color3 : rgb(199,199,199);
+  --color4 :rgb(33,33,33);
+  --color5 : rgb(117,117,117);
+  --color6 : rgb(228,228,228);
+  --color7: #409B40;
+  --color8 : rgb(81,81,81);
+  --color9 : rgb(58,58,58);
+  --color10: rgb(167,167,167);
+  --color11 : rgb(105,105,105);
+  --color12 :rgb(137,137,137); 
+  --color13 : rgb(37,37,37);
+  --color14 : rgb(219,219,219);
+  --color15: rgb(44, 44, 44);
+  --color16: rgb(238,238,238);
+  --color17: rgb(207,207,207);
+  --color18: rgb(51,51,51);
+
+}
+.animate__slower{
+  animation-duration: 3s !important;
+}
+::selection{
+  background-color: var(--color2);
+}
+body {
+  min-height: 100vh;
+  background-color: var(--color1);
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.my-container{
+  margin: auto;
+}
+
+@media(min-width:1501px){
+  .my-container{
+    max-width: 70%;
+  }
+}
+
+@media(max-width:1500px){
+  .my-container{
+    max-width: 80%;
+  }
+}
+@media(max-width:1200px){
+  .my-container{
+    max-width: 85%;
+  }
+}
+@media(max-width:992px){
+  .my-container{
+    max-width: 90%;
+  }
+}
+@media(max-width:768px){
+  .my-container{
+    max-width: 90%;
+  }
+}
+@media(max-width:576px){
+  .my-container{
+    max-width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+hr {
+  width: 30vw;
+  border: .5px solid var(--color4);
+  text-align: center;
+  margin: 50px auto;
+}
+a , button {
+  text-decoration: none ;
+  font-family: '__Inter_e66fe9', '__Inter_Fallback_e66fe9';
+}
+button:hover {
+  cursor: pointer;
+}
+
+input , select , textarea {
+  border: none;
+  outline: none;
+  font-family: '__Inter_e66fe9', '__Inter_Fallback_e66fe9';
+}
+
+
+input:focus{
+  outline: none;
+}
+
+.panel-content :is(button,select,input:not([type="checkbox"])) {
+  background-color: var(--color13);
+  border-radius: 5px;
+  padding: 5px;
+  caret-color: var(--color2);
+  height: 35px;
+  width: 100%;
+}
+.panel-content button{
+  background-color: var(--color2) !important ;
+  padding: 5px;
+  min-width: 100px;
+}
+.panel-content select{
+  margin-bottom: 20px;
+}
+
+.panel-content input:focus{
+  border: 1px solid var(--color2);
+}
+
+circle {
+  color: var(--color2);
+}
+
