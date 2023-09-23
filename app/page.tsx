@@ -5,16 +5,16 @@ import 'animate.css'
 import { redirect } from 'next/navigation'
 const getInfo = async ()=>{
     try {
-      const resp = await fetch(`${apiBaseUrl}/user`,{cache:'no-cache'})
-      const data = await resp.json()
-      return data.info
+        const resp = await fetch(`${apiBaseUrl}/user`,{cache:'no-cache'})
+        const data = await resp.json()
+        return data.info
     } catch (error) {
         console.log(error)  
         //redirect('/error')
     }
 }
 
-export const runtime = 'edge'
+//export const runtime = 'edge'
 
 
 export default async function Home() {

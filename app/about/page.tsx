@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 const getData = async ()=>{
     try {
-        const resp = await fetch(`${apiBaseUrl}/about`,{cache:'no-cache'})
+        const resp = await fetch(`${apiBaseUrl}/about`,{cache:"no-cache"})
         const data = await resp.json()
         return data
     } catch (error) {
@@ -24,7 +24,7 @@ const getData = async ()=>{
         //redirect('/error')
     }
 }
-export const runtime = 'edge'
+export const runtime = 'edge' 
 export default async function About() {
     const data = await getData()
     return (
