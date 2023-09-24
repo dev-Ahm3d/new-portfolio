@@ -21,11 +21,11 @@ const uploader =  async (req:NextRequest)=>{
         else jsonData[key] = values[i]
     })
 
-    /*
     const {publicRuntimeConfig } = getConfig();
     let imgs : any = formData.getAll('image')
     let individual = imgs && imgs.length === 1
     let multi = imgs && imgs.length > 1
+    /*
     let field : string
     if(individual){
         field = 'image'
