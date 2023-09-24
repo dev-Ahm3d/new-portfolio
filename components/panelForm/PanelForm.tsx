@@ -72,7 +72,7 @@ const PanelForm = ({category,header,subHeader,inputs,inputFields,apiUrl}:PanelFo
     const addFormSubmit = async (formFields:any)=>{
         
         setLoading(true)
-        const formData = handleFormData(formFields)
+        const formData = await handleFormData(formFields)
         const resp = await callApiHandler('post',apiUrl,{},formData)
         setLoading(false)
         if(resp?.status === 201 ){
@@ -86,7 +86,7 @@ const PanelForm = ({category,header,subHeader,inputs,inputFields,apiUrl}:PanelFo
     const editForm = useForm()
     const editFormSubmit = async (formFields:any)=>{
         setLoading(true)
-        const formData = handleFormData(formFields)
+        const formData = await handleFormData(formFields)
         const resp = await callApiHandler('patch',`${apiUrl}?id=${selectedEl?._id}`,{},formData)
         setLoading(false)
         if(resp?.status === 200){

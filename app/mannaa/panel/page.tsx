@@ -46,7 +46,7 @@ const page = () => {
     })
     const onSubmit = async (formFields:any)=>{
         setLoading(true)
-        const formData = handleFormData(formFields)
+        const formData = await handleFormData(formFields)
         const resp = await callApiHandler('patch','/user',{},formData)
         setLoading(false)
         if(resp?.status === 201){
