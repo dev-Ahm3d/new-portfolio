@@ -24,7 +24,6 @@ export async function GET(){
 }
 
 export async function PATCH(req:NextRequest){
-    /*
     const data = await uploader(req)
     if(data.err) throw new Error('invalid file type')
     if(data.newPassword) {
@@ -33,7 +32,6 @@ export async function PATCH(req:NextRequest){
         delete data.newPassword
     }
     const updatedInfo = await updateUserInfo(data)
-    */
-    const updatedInfo = await req.formData()
+    //const updatedInfo = await req.formData()
     return NextResponse.json({updatedInfo : JSON.parse(JSON.stringify(updatedInfo))},{status:201})
 }

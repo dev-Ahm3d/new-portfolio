@@ -1,5 +1,4 @@
 import {v2 as cloudinary} from 'cloudinary'
-import fs from 'fs'
 import {readFile, unlink, writeFile } from 'fs/promises'
 import getConfig from 'next/config'
 import { NextRequest } from 'next/server'
@@ -34,6 +33,7 @@ const uploader =  async (req:NextRequest)=>{
         field = 'images'
         jsonData['images'] = []
     }
+    /*
     const handleUpload = async (image:any)=>{
         if(image.type.includes('image/')){
             const bytes = await image?.arrayBuffer()
@@ -44,7 +44,7 @@ const uploader =  async (req:NextRequest)=>{
             const file = await readFile(filePath)
             const imgCloud = `data:${image.type};base64,` +  Buffer.from(file).toString('base64')
             const {url} =  await cloudinary.uploader.upload(imgCloud)  
-            await unlink(filePath)          
+            //await unlink(filePath)          
             if(url && field === 'images') jsonData['images'].push(url)
             if(url && field === 'image') jsonData['image'] = url 
         }else jsonData.err = "invalid image type !!"  
@@ -55,6 +55,7 @@ const uploader =  async (req:NextRequest)=>{
             await handleUpload(el)
         }  
     }
+    */
     return jsonData
 }
 
