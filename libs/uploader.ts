@@ -22,6 +22,7 @@ const uploader =  async (req:NextRequest)=>{
     })
 
     const {publicRuntimeConfig } = getConfig();
+    /*
     let imgs : any = formData.getAll('image')
     let individual = imgs && imgs.length === 1
     let multi = imgs && imgs.length > 1
