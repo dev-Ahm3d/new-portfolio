@@ -14,7 +14,6 @@ cloudinary.config({
 const uploader =  async (req:NextRequest)=>{
     const formData = await req.formData()
     const jsonData:any = {}
-    /*
     const keys = [...formData.keys()]
     const values = [...formData.values()]
     keys.forEach((key,i) =>{
@@ -22,6 +21,7 @@ const uploader =  async (req:NextRequest)=>{
         else jsonData[key] = values[i]
     })
 
+    /*
     const {publicRuntimeConfig } = getConfig();
     let imgs : any = formData.getAll('image')
     let individual = imgs && imgs.length === 1
