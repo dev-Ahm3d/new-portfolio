@@ -1,3 +1,5 @@
+import Project from '@/models/Project'
+import Skill from '@/models/Skill'
 import {v2 as cloudinary} from 'cloudinary'
 import { NextRequest } from 'next/server'
 
@@ -9,6 +11,15 @@ cloudinary.config({
 
 
 const uploader =  async (req:NextRequest)=>{
+    const skills = await Project.find({}) 
+    skills.forEach(async el =>{
+        const images:string[] = []
+        el.images.forEach((ele:string) =>{
+            images.push(ele.replace('http://','https://'))
+        })
+        el.images = [...images] 
+        await el.save()
+    })
     const formData = await req.formData()
     const jsonData:any = {}
     const keys = [...formData.keys()]
@@ -18,8 +29,6 @@ const uploader =  async (req:NextRequest)=>{
         else jsonData[key] = values[i]
     })
     
-    //console.log(jsonData)
-
     let imgs : any[] = formData.getAll('image')
     let individual = imgs && imgs.length === 1
     let multi = imgs && imgs.length > 1
@@ -33,18 +42,9 @@ const uploader =  async (req:NextRequest)=>{
     }
     
     const handleUpload = async (image:any)=>{
-        /*
-        const bytes = await image?.arrayBuffer()
-        const buffer = Buffer.from(bytes)
-        const imageName = Date.now() + '-' + image.name
-        const filePath = path.join(process.cwd(), 'public/uploads', imageName);
-        await writeFile(filePath,buffer)
-        const file = await readFile(filePath)
-        const imgCloud = `data:${image.type};base64,` +  Buffer.from(file).toString('base64')
-        */
         const {url} =  await cloudinary.uploader.upload(image)  
-        if(url && field === 'images') jsonData['images'].push(url)
-        if(url && field === 'image') jsonData['image'] = url 
+        if(url && field === 'images') jsonData['images'].push(url.replace('http://','https://'))
+        if(url && field === 'image') jsonData['image'] = url.replace('http://','https://') 
     }
     if(individual) await handleUpload(imgs[0])
     else if(multi){
@@ -56,4 +56,3 @@ const uploader =  async (req:NextRequest)=>{
 }
 
 export default uploader
-
