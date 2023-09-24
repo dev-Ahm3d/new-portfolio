@@ -14,6 +14,7 @@ cloudinary.config({
 const uploader =  async (req:NextRequest)=>{
     const formData = await req.formData()
     const jsonData:any = {}
+    /*
     const keys = [...formData.keys()]
     const values = [...formData.values()]
     keys.forEach((key,i) =>{
