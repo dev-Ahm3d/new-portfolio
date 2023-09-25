@@ -21,8 +21,8 @@ const page = () => {
         axios.get(`${apiBaseUrl}/user`)
         .then(resp => setInfo(resp?.data.info))
         .catch(err => {
-            console.log(err)
-            //window.location.href = '/error'
+            //console.log(err)
+            window.location.href = '/error'
         })
     },[])
     const {register,handleSubmit,reset} = useForm()

@@ -9,8 +9,8 @@ const getInfo = async ()=>{
         const data = await resp.json()
         return data.info
     } catch (error) {
-        console.log(error)  
-        //redirect('/error')
+        //console.log(error)  
+        redirect('/error')
     }
 }
 

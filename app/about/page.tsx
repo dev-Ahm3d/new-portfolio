@@ -20,8 +20,8 @@ const getData = async ()=>{
         const data = await resp.json()
         return data
     } catch (error) {
-        console.log(error)
-        //redirect('/error')
+        //console.log(error)
+        redirect('/error')
     }
 }
 export const runtime = 'edge'
@@ -100,7 +100,7 @@ export default async function About() {
                 <SectionTitle text="my skills"/>
                 <div className="my-skills">
                     {
-                        data?.skills.map((el:any) =>{
+                        data?.skills.sort((a:any, b:any) => a.priority - b.priority).map((el:any) =>{
                             return(
                                 !el.disabled && <div key={el._id}  className="skill">
                                     <Image width={500} height={500} src={el.image} alt={el.title} title={el.title} />

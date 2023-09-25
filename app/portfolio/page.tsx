@@ -16,8 +16,8 @@ const getProjects = async ()=>{
         const data = await resp.json()
         return data.docs
     } catch (error) {
-        console.log(error)
-        //redirect('/error')
+        //console.log(error)
+        redirect('/error')
     }
 }
 
