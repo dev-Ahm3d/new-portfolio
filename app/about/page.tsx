@@ -59,7 +59,7 @@ export default async function About() {
                             <span>Age : </span>
                             <span>
                                 {
-                                    Math.floor( ( new Date() - new Date(data?.info.dateOfBirth) ) / (365.25 * 24 * 60 * 60 * 1000) )
+                                    Math.floor( ( new Date().valueOf() - new Date(data?.info.dateOfBirth).valueOf() ) / (365.25 * 24 * 60 * 60 * 1000) )
                                 }                           
                             </span>
                         </div>
