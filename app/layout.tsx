@@ -11,8 +11,8 @@ const font = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Ahmed Ehab',
-  description: 'Ahmed Ehab',
+  title: 'Ahmed Ehab Mannaa',
+  description: 'Ahmed Ehab Mannaa',
 }
 
 export default function RootLayout({
